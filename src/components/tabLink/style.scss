@@ -1,0 +1,108 @@
+aside {
+    gap: 1em;
+    width: 18em;
+    display: flex;
+    overflow: auto;
+    padding: 2em 0;
+    padding-right: 0;
+    flex-direction: column;
+    height: calc(100vh - 4em);
+    background-color: var(--5);
+    justify-content: flex-start;
+    box-shadow: .2em 0 .2em rgba(0 0 0 / .1);
+
+    @media screen and (max-width: 45em) {
+        width: 3.8em;
+    }
+
+    a {
+        gap: .5em;
+        width: 100%;
+        display: flex;
+        padding: .5em 1em;
+        transition: 400ms;
+        position: relative;
+        align-items: center;
+        text-decoration: none;
+        justify-content: flex-start;
+
+        &::before,
+        &::after {
+            top: 0;
+            left: 0;
+            z-index: 0;
+            content: '';
+            width: 100%;
+            height: 100%;
+            transition: 400ms;
+            position: absolute;
+        }
+
+        &::before {
+            opacity: 0.1;
+        }
+
+        &::after {
+            width: .2em;
+        }
+
+        // &.active,
+        &:hover {
+
+            &::before,
+            &::after {
+                background-color: var(--2);
+            }
+        }
+
+        img {
+            z-index: 1;
+            width: 1.2em;
+            height: 1.2em;
+            object-fit: contain;
+        }
+
+        span {
+            z-index: 1;
+            font-size: .8em;
+            white-space: nowrap;
+            text-transform: capitalize;
+        }
+
+        @media screen and (max-width: 45em) {
+            &> :not(img) {
+                display: none;
+            }
+        }
+    }
+
+    &>a:first-child {
+        font-weight: 900;
+    }
+
+    .group {
+        width: 100%;
+        gap: inherit;
+        display: flex;
+        flex-direction: column;
+
+        i {
+            color: black;
+            font-size: 0.8em;
+            margin-left: .5em;
+            font-style: normal;
+            font-variant: small-caps;
+
+            @media screen and (max-width: 45em) {
+                display: none;
+            }
+        }
+
+        .links {
+            flex: 1 auto;
+            display: flex;
+            overflow: auto;
+            flex-direction: column;
+        }
+    }
+}

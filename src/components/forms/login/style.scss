@@ -1,0 +1,100 @@
+form#login {
+    gap: 3em;
+    flex: 1 auto;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    width: max(80%, 20em);
+    flex-direction: column;
+    justify-content: center;
+
+    & :is(header, footer) {
+        padding: 0 !important;
+    }
+
+    &>* {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        h2 {
+            font-weight: 900;
+            font-size: 2.5em;
+        }
+    }
+
+    section.form-group {
+        gap: 1.2em;
+        display: flex;
+        flex-direction: column;
+
+        .group {
+            width: 100%;
+            height: 2.5em;
+            position: relative;
+
+            input {
+                width: 100%;
+                height: 100%;
+                outline: none;
+                padding-inline: 5%;
+                position: absolute;
+                border-radius: .4em;
+                border: .1em solid var(--4);
+
+                &[type='password'] {
+                    padding-right: 4em;
+                }
+
+                &::placeholder {
+                    color: var(--4);
+                    text-transform: capitalize;
+                }
+            }
+
+            i {
+                top: 50%;
+                right: 1em;
+                color: var(--2);
+                font-size: .7em;
+                cursor: pointer;
+                position: absolute;
+                font-style: normal;
+                font-variant: small-caps;
+                transform: translateY(-50%);
+            }
+
+            a {
+                color: var(--2);
+                font-weight: 900;
+                font-size: 0.7em;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    footer {
+        align-items: center;
+        justify-content: center;
+
+        button {
+            width: 100%;
+            border: none;
+            outline: none;
+            height: 2.8em;
+            cursor: pointer;
+            color: var(--5);
+            font-weight: 900;
+            transition: 200ms;
+            border-radius: .4em;
+            text-transform: uppercase;
+            background-color: var(--2);
+
+            &:hover {
+                filter: brightness(1.1);
+            }
+        }
+    }
+}
