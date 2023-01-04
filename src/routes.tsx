@@ -18,8 +18,8 @@ export default () => {
                     <Route path='' element={<pages.login />} />
                 </Route>
                 <Route path='/dashboard' element={<layout.dashboard />}>
-                    <Route path='user' element={<pages.dashboard />} />
-                    <Route path='user/:id' element={<pages.details />} />
+                    <Route path='' element={<pages.dashboard />} />
+                    <Route path='users/:id' element={<pages.details />} />
                 </Route>
             </Routes>
         </Browser>

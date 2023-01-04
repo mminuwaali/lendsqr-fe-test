@@ -10,25 +10,25 @@ export type userType = {
     firstName: T, lastName: T, phoneNumber: T, avatar: T,
 };
 
-export type socialType = {};
+export type socialType<T = string> = {};
 
-export type educationType = {};
+export type educationType<T = string> = {};
 
-export type incomeType = Array<string>;
+export type incomeType<T = string> = Array<string>;
 
 export type dataType<T = string> = {
-    email: T,
-    orgName: T,
-    userName: T,
-    createdAt: T,
-    updatedAt: T,
-    phoneNumber: T,
-    accountNumber: T,
-    lastActiveDate: T,
-    accountBalance: T,
-    profile: userType,
-    gurantor: userType,
-    socials: socialType,
-    monthlyIncome: incomeType,
-    education: educationType,
+    email?: T,
+    orgName?: T,
+    userName?: T,
+    createdAt?: T,
+    updatedAt?: T,
+    phoneNumber?: T,
+    accountNumber?: T,
+    lastActiveDate?: T,
+    accountBalance?: T,
+    profile?: userType,
+    gurantor?: userType,
+    socials?: socialType,
+    monthlyIncome?: incomeType,
+    education?: educationType,
 };
