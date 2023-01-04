@@ -41,7 +41,6 @@ form.search {
         display: flex;
         cursor: pointer;
         transition: 300ms;
-        aspect-ratio: 4/3;
         position: relative;
         align-items: center;
         justify-content: center;
@@ -55,6 +54,7 @@ form.search {
         img {
             width: 1em;
             height: 1em;
+            margin: auto;
             fill: var(--5);
         }
     }

@@ -1,7 +1,6 @@
 import './style.scss';
 import { ReactElement } from 'react';
-import searchIcon from '../../../assets/icon/search.svg';
-import { AiOutlineSearch as Search } from 'react-icons/ai';
+import searchIcon from '../../../assets/icons/search.svg';
 
 type propType = { search: boolean };
 

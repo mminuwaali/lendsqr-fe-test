@@ -1,9 +1,9 @@
 import './style.scss';
 import * as form from '../forms';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/icon/logo.svg';
-import bell from '../../assets/icon/bell.svg';
-import searchIcon from '../../assets/icon/search.svg';
+import logo from '../../assets/icons/logo.svg';
+import bell from '../../assets/icons/bell.svg';
+import searchIcon from '../../assets/icons/search.svg';
 import { Dispatch, ReactElement, SetStateAction, useState } from 'react';
 
 export default (): ReactElement => {

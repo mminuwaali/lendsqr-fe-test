@@ -4,8 +4,8 @@ import { ReactElement } from 'react';
 import { NavLink } from 'react-router-dom';
 
 // icons
-import $case from '../../assets/icon/case.svg';
-import $home from '../../assets/icon/home.svg';
+import $case from '../../assets/icons/case.svg';
+import $home from '../../assets/icons/home.svg';
 
 export default (): ReactElement => {
     return <aside>

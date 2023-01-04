@@ -1,17 +1,17 @@
 import type {linksType} from './vite-env';
 import { ColumnGroup } from 'react-table';
-import cases from './assets/icon/case.svg';
-import loans from './assets/icon/loans.svg';
-import users from './assets/icon/users.svg';
-import karma from './assets/icon/karma.svg';
-import request from './assets/icon/request.svg';
-import pricing from './assets/icon/pricing.svg';
-import savings from './assets/icon/savings.svg';
-import handshake from './assets/icon/handshake.svg';
-import gurantors from './assets/icon/gurantors.svg';
-import whitelist from './assets/icon/whitelist.svg';
-import clipboard from './assets/icon/clipboard.svg';
-import preference from './assets/icon/preference.svg';
+import cases from './assets/icons/case.svg';
+import loans from './assets/icons/loans.svg';
+import users from './assets/icons/users.svg';
+import karma from './assets/icons/karma.svg';
+import request from './assets/icons/request.svg';
+import pricing from './assets/icons/pricing.svg';
+import savings from './assets/icons/savings.svg';
+import handshake from './assets/icons/handshake.svg';
+import gurantors from './assets/icons/gurantors.svg';
+import whitelist from './assets/icons/whitelist.svg';
+import clipboard from './assets/icons/clipboard.svg';
+import preference from './assets/icons/preference.svg';
 
 export const tabLinks: linksType[] = [
     {
