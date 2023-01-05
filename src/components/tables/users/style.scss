@@ -1,0 +1,52 @@
+table.users {
+    padding: 1em;
+    color: var(--1);
+    font-size: .8em;
+    border-radius: .4em;
+    border-collapse: collapse;
+
+    tr {
+        td,th {
+            white-space: nowrap;
+        }
+    }
+
+    thead {
+        font-variant: small-caps;
+        text-transform: uppercase;
+
+        tr {
+            th {
+                font-weight: 600;
+                text-align: left;
+                padding: 1em 0.5em;
+
+                &.sort {
+                    color: var(--6);
+                    font-weight: 900;
+                    text-decoration: underline;
+                }
+
+                img {
+                    margin-left: .5em;
+                }
+            }
+        }
+    }
+
+    tbody {
+        padding-inline: 1em;
+        tr {
+            border-bottom: .05em solid var(--4);
+            td {
+                padding: 0.5em;
+                color: var(--1);
+
+                &:last-child {
+                    font-weight: 900;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

@@ -11,7 +11,7 @@ export default (): ReactElement => {
     const { id } = useParams();
 
     // states
-    const [user, setUser]: [dataType, Dispatch<SetStateAction<dataType>>] = useState({});
+    const [user, setUser]: [Partial<dataType>, Dispatch<SetStateAction<Partial<dataType>>>] = useState({});
 
     // effects
     useEffect(() => { fetchUser() }, []);
@@ -22,6 +22,8 @@ export default (): ReactElement => {
             const res = await api.get(`users/${id}`);
             setItem('user', res.data || {});
             setUser(() => res.data || {});
+            console.log(res.data);
+            
         } catch (error: unknown) { console.error("Something went wrong while fetching user data"); }
     };
 

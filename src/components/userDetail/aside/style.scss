@@ -1,4 +1,13 @@
 div.aside-user {
     flex: 1 auto;
     display: flex;
+
+    &>section {
+        flex: 1 auto;
+        padding: 1em;
+        display: flex;
+        border-radius: .3em;
+        background-color: var(--5);
+        box-shadow: .2em .2em .2em rgba(0 0 0 / .2);
+    }
 }

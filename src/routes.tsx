@@ -10,16 +10,22 @@ const pages = {
     dashboard: lazy(() => import('./pages/dashboard')),
 };
 
+const userTabs = {
+    general: lazy(() => import('./components/userTabs/general')),
+};
+
 export default () => {
     return <Suspense fallback={<Loader />}>
         <Browser>
             <Routes>
                 <Route path='/' element={<layout.auth />}>
-                    <Route path='' element={<pages.login />} />
+                    <Route index element={<pages.login />} />
                 </Route>
                 <Route path='/dashboard' element={<layout.dashboard />}>
-                    <Route path='' element={<pages.dashboard />} />
-                    <Route path='users/:id' element={<pages.details />} />
+                    <Route index element={<pages.dashboard />} />
+                    <Route path='users/:id' element={<pages.details />}>
+                        <Route index element={<userTabs.general />} />
+                    </Route>
                 </Route>
             </Routes>
         </Browser>

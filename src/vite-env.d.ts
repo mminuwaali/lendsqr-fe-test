@@ -5,30 +5,52 @@ export type linksType<T = string> = {
     links: Array<{ path: T, name: T, icon: T }>
 };
 
-export type userType = {
-    gender: T, bvn: T, address: T, currency: T,
-    firstName: T, lastName: T, phoneNumber: T, avatar: T,
+export type tablesType = {
+    data:dataType[]
 };
 
-export type socialType<T = string> = {};
+export type userType = {
+    bvn: T,
+    gender: T,
+    avatar: T,
+    address: T,
+    currency: T,
+    firstName: T,
+    lastName: T,
+    phoneNumber: T,
 
-export type educationType<T = string> = {};
+};
+
+export type socialType<T = string> = {
+    twitter: T,
+    facebook: T,
+    instagram: T,
+};
+
+export type educationType<T = string> = {
+    level: T,
+    sector: T,
+    duration: T,
+    officeEmail: T,
+    employmentStatus: T,
+    monthlyIncome: Array<T>,
+};
 
 export type incomeType<T = string> = Array<string>;
 
 export type dataType<T = string> = {
-    email?: T,
-    orgName?: T,
-    userName?: T,
-    createdAt?: T,
-    updatedAt?: T,
-    phoneNumber?: T,
-    accountNumber?: T,
-    lastActiveDate?: T,
-    accountBalance?: T,
-    profile?: userType,
-    gurantor?: userType,
-    socials?: socialType,
-    monthlyIncome?: incomeType,
-    education?: educationType,
+    email: T,
+    id:number,
+    orgName: T,
+    userName: T,
+    createdAt: T,
+    phoneNumber: T,
+    accountNumber: T,
+    lastActiveDate: T,
+    accountBalance: T,
+    profile: userType,
+    socials: socialType,
+    education: educationType,
+    monthlyIncome: incomeType,
+    gurantor: Partial<userType>,
 };

@@ -4,10 +4,11 @@ section#dashboard {
     height: calc(100vh - 4em);
 
     main {
+        gap: 2em;
         width: auto;
-        padding: 2em;
         display: flex;
         overflow: auto;
+        padding: 2em 1em;
         position: relative;
         flex-direction: column;
         background-color: var(--4);

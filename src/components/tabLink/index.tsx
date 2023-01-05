@@ -1,11 +1,12 @@
 import './style.scss';
 import { tabLinks } from '../../data';
 import { ReactElement } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 // icons
 import $case from '../../assets/icons/case.svg';
 import $home from '../../assets/icons/home.svg';
+import logout from '../../assets/icons/logout.svg';
 
 export default (): ReactElement => {
     return <aside>
@@ -30,5 +31,11 @@ export default (): ReactElement => {
                 </div>
             </div>
         ))}
+        <div className="group">
+            <div className="links">
+                <Link to='/'><img src={logout} alt="" /><span>logout</span></Link>
+                <span className='version'>v1.2.0</span>
+            </div>
+        </div>
     </aside>;
 };
