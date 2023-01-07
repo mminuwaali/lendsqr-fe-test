@@ -1,12 +1,12 @@
 import './style.scss';
 import * as cards from '../../cards';
 import * as forms from '../../forms';
-import { tablesType } from '../../../vite-env';
 import { usersDataTable } from '../../../data';
 import { UserContext } from '../../../contexts';
 import sort from '../../../assets/icons/sort.svg';
+import type { tablesType, } from '../../../vite-env';
 import { ReactElement, useMemo, useContext, ChangeEventHandler, Fragment } from 'react';
-import { useTable, useSortBy, HeaderGroup, usePagination, UsePaginationOptions, TableOptions, UseTableHeaderGroupProps } from 'react-table';
+import { useTable, useSortBy, HeaderGroup, usePagination, UsePaginationOptions, TableOptions, UseTableHeaderGroupProps, TableHeaderGroupProps } from 'react-table';
 
 export default (): ReactElement<HTMLTableElement> => {
     // context
@@ -22,7 +22,8 @@ export default (): ReactElement<HTMLTableElement> => {
         getTableProps, getTableBodyProps, prepareRow, pageOptions,
         page, nextPage, previousPage, canNextPage, canPreviousPage,
         gotoPage, pageCount, state: { pageIndex },
-    }: TableOptions<any> & UsePaginationOptions = useTable({ columns, data }, useSortBy, usePagination);
+        // @ts-ignore
+    }: TableOptions | UsePaginationOptions<object> = useTable({ columns, data }, useSortBy, usePagination);
 
     // methods
     const gotoSelectedPage: ChangeEventHandler<HTMLSelectElement> = ({ currentTarget: t }) => gotoPage(t?.value || 1);
@@ -35,20 +36,29 @@ export default (): ReactElement<HTMLTableElement> => {
                     <tr {...headerGroup.getHeaderGroupProps()}>
                         {
                             headerGroup.headers.map((column: HeaderGroup, index) => (
+                                // @ts-ignore
                                 <th {...column.getHeaderProps(column.getSortByToggleProps())} className={`${column?.isSorted ? 'sort' : ''}`}>
-                                    {column.render('Header')} {index < headerGroup.headers.length - 1 ? <img src={sort} alt="" className="sort" style={{ transform: `rotate(${column.isSortedDesc ? 180 : 0}deg)` }} /> : null}
+                                    {column.render('Header')} {index < headerGroup.headers.length - 1 ? <img src={sort} alt="" className="sort" style={{
+                                        transform: `rotate(${
+                                            // @ts-ignore
+                                            column.isSortedDesc ? 180 : 0
+                                            }deg)`
+                                    }} /> : null}
                                 </th>
                             ))
                         }
                     </tr>))}
             </thead>
             <tbody {...getTableBodyProps()}>
-                {page.map(row => {
-                    prepareRow(row);
-                    return <tr {...row.getRowProps()}>{row.cells.map((cell, index) => (
-                        <td {...cell.getCellProps()}>{index < row.cells.length - 1 ? cell.render('Cell') : <cards.menu id={row.values.id} />}</td>))}
-                    </tr>;
-                })}
+                {page.map(
+                    // @ts-ignore
+                    row => {
+                        prepareRow(row);
+                        // @ts-ignore
+                        return <tr {...row.getRowProps()}>{row.cells.map((cell, index) => (
+                            <td {...cell.getCellProps()}>{index < row.cells.length - 1 ? cell.render('Cell') : <cards.menu id={row.values.id} />}</td>))}
+                        </tr>;
+                    })}
             </tbody>
             <tfoot>
                 <tr>

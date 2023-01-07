@@ -63,7 +63,7 @@ export const usersDataTable: Column[] = [
     { Header: 'email', accessor: 'email' },
     { Header: 'phone number', accessor: 'phoneNumber' },
     {
-        Header: 'date joined', accessor: 'createdAt', Cell: ({ value }): string => {
+        Header: 'date joined', accessor: 'createdAt', Cell: ({ value }): any => {
             let d = new Date(value);
             let [utc, hrs, min, mm] = [d.toDateString(), d.getUTCHours(), d.getUTCDate(), d.getHours() > 12 ? 'PM' : 'AM'];
             return `${utc} ${hrs}:${min} ${mm}`;

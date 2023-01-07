@@ -8,7 +8,7 @@ export default (): ReactElement<HTMLFormElement> => {
         e.preventDefault();
     };
 
-    return <form action="#" className="filter-users" onSubmit={onsubmit}>
+    return <form action="#" className="filter-users" onSubmit={onSubmit}>
         <div className="form-group">
             <div className="input-group"><label htmlFor="organisation">organisation</label>
                 <select name="organisation">

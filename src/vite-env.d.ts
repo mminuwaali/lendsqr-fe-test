@@ -1,5 +1,7 @@
 /// <reference types="vite/client" />
 
+export { Column } from 'react-table';
+
 export type linksType<T = string> = {
     title: T,
     links: Array<{ path: T, name: T, icon: T }>
