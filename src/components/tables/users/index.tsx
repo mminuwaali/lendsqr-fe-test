@@ -5,8 +5,8 @@ import { usersDataTable } from '../../../data';
 import { UserContext } from '../../../contexts';
 import sort from '../../../assets/icons/sort.svg';
 import type { tablesType, } from '../../../vite-env';
-import { ReactElement, useMemo, useContext, ChangeEventHandler, Fragment } from 'react';
-import { useTable, useSortBy, HeaderGroup, usePagination, UsePaginationOptions, TableOptions, UseTableHeaderGroupProps, TableHeaderGroupProps } from 'react-table';
+import { ReactElement, useMemo, useContext, ChangeEventHandler, Fragment, useState, Dispatch, SetStateAction, MouseEventHandler } from 'react';
+import { useTable, useSortBy, HeaderGroup, usePagination, UsePaginationOptions, TableOptions, UseTableHeaderGroupProps, useFilters } from 'react-table';
 
 export default (): ReactElement<HTMLTableElement> => {
     // context
@@ -16,6 +16,9 @@ export default (): ReactElement<HTMLTableElement> => {
     const data = useMemo(() => d || [], []);
     const columns = useMemo(() => usersDataTable, []);
 
+    // states
+    const [filterAll, setFilterAll]: [boolean, Dispatch<SetStateAction<boolean>>] = useState(false);
+
     //  react table hook
     const {
         headerGroups, rows,
@@ -23,19 +26,20 @@ export default (): ReactElement<HTMLTableElement> => {
         page, nextPage, previousPage, canNextPage, canPreviousPage,
         gotoPage, pageCount, state: { pageIndex },
         // @ts-ignore
-    }: TableOptions | UsePaginationOptions<object> = useTable({ columns, data }, useSortBy, usePagination);
+    }: TableOptions | UsePaginationOptions<object> = useTable({ columns, data }, useFilters, useSortBy, usePagination);
 
     // methods
+    const totggleFilter: MouseEventHandler<HTMLButtonElement> = () => void setFilterAll(prev => !prev);
     const gotoSelectedPage: ChangeEventHandler<HTMLSelectElement> = ({ currentTarget: t }) => gotoPage(t?.value || 1);
 
     return <Fragment>
-        <forms.filter />
+        {filterAll && <forms.filter close={totggleFilter} />}
         <table {...getTableProps()} className="users">
             <thead>
                 {headerGroups.map((headerGroup: UseTableHeaderGroupProps<any>) => (
                     <tr {...headerGroup.getHeaderGroupProps()}>
                         {
-                            headerGroup.headers.map((column: HeaderGroup, index) => (
+                            headerGroup.headers.map((column: HeaderGroup, index) => index < headerGroup.headers.length - 1 ? (
                                 // @ts-ignore
                                 <th {...column.getHeaderProps(column.getSortByToggleProps())} className={`${column?.isSorted ? 'sort' : ''}`}>
                                     {column.render('Header')} {index < headerGroup.headers.length - 1 ? <img src={sort} alt="" className="sort" style={{
@@ -45,7 +49,7 @@ export default (): ReactElement<HTMLTableElement> => {
                                             }deg)`
                                     }} /> : null}
                                 </th>
-                            ))
+                            ) : <th><button className='filter' onClick={totggleFilter}>filter</button></th>)
                         }
                     </tr>))}
             </thead>

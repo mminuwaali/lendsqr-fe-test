@@ -38,6 +38,21 @@ table.users {
                     font-size: 1em;
                     margin-left: .5em;
                 }
+
+                button {
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                    font-weight: 900;
+                    padding: .5em 1em;
+                    pointer-events: all;
+                    font-variant: small-caps;
+                    background-color: transparent;
+                }
+
+                &:last-child {
+                    pointer-events: none;
+                }
             }
         }
     }

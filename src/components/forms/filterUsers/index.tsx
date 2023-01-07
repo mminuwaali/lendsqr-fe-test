@@ -1,7 +1,7 @@
 import { FormEventHandler, ReactElement } from 'react';
 import './style.scss';
 
-export default (): ReactElement<HTMLFormElement> => {
+export default ({close}:{close:Function}): ReactElement<HTMLFormElement> => {
     // states
     // methods
     const onSubmit: FormEventHandler<HTMLFormElement> = (e): void => {
