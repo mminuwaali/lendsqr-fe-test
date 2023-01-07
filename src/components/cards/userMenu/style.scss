@@ -13,11 +13,12 @@ div.menu {
         outline: none;
         cursor: pointer;
         align-items: center;
+        padding-inline: .5em;
         flex-direction: column;
         justify-content: center;
         background: transparent;
 
-        &:hover + ul.links {
+        &.open + ul.links {
             display: flex;
         }
 
@@ -32,21 +33,25 @@ div.menu {
 
     ul.links {
         top: 50%;
+        gap: 1em;
         right: 1em;
         display: none;
         overflow: hidden;
         list-style: none;
-        padding: .5em 1em;
+        padding:  1em;
         position: absolute;
         border-radius: .2em;
         flex-direction: column;
         align-items: flex-start;
         background-color: var(--5);
         transform: translateY(-50%);
-        box-shadow: .2em .2em .2em rgba(0 0 0 / .1);
+        box-shadow: .2em .2em .2em .2em rgba(0 0 0 / .05);
 
         li {
+            gap: .5em;
             width: 100%;
+            display: flex;
+            padding: 0 1em 0 .5em;
             
             a {
                 display: flex;

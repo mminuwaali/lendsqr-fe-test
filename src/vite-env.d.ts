@@ -6,7 +6,11 @@ export type linksType<T = string> = {
 };
 
 export type tablesType = {
-    data:dataType[]
+    data: dataType[]
+};
+
+export type reportType<T = string> = {
+    image: T, name: T, number: T,
 };
 
 export type userType = {
@@ -32,6 +36,7 @@ export type educationType<T = string> = {
     sector: T,
     duration: T,
     officeEmail: T,
+    loanRepayment: T,
     employmentStatus: T,
     monthlyIncome: Array<T>,
 };
@@ -39,8 +44,8 @@ export type educationType<T = string> = {
 export type incomeType<T = string> = Array<string>;
 
 export type dataType<T = string> = {
+    id: T,
     email: T,
-    id:number,
     orgName: T,
     userName: T,
     createdAt: T,
@@ -52,5 +57,5 @@ export type dataType<T = string> = {
     socials: socialType,
     education: educationType,
     monthlyIncome: incomeType,
-    gurantor: Partial<userType>,
+    guarantor: Partial<userType>,
 };

@@ -157,10 +157,15 @@ div.main-user {
                 }
 
                 .star {
-                    gap: 0.5em;
+                    gap: 0.4em;
                     display: flex;
                     align-items: center;
                     justify-content: flex-start;
+
+                    img {
+                        width: 1.2em;
+                        height: 1.2em;
+                    }
                 }
             }
 
@@ -246,7 +251,7 @@ div.main-user {
                         transition: opacity 300ms linear;
                     }
 
-                    &.current,
+                    &.active,
                     &:hover {
                         color: var(--2);
 

@@ -10,11 +10,11 @@ import logout from '../../assets/icons/logout.svg';
 
 export default (): ReactElement => {
     return <aside>
-        <NavLink to='/dashboard?tab=1'>
+        <NavLink to='/'>
             <img src={$case} alt="" />
             <span>switch organisation</span>
         </NavLink>
-        <NavLink to='/dashboard?tab=1'>
+        <NavLink to='/dashboard'>
             <img src={$home} alt="" />
             <span>dashboard</span>
         </NavLink>

@@ -5,6 +5,10 @@ table.users {
     border-radius: .4em;
     border-collapse: collapse;
 
+    @media screen and (max-width: 60em) {
+        font-size: 0.6em;
+    }
+
     tr {
         td,th {
             white-space: nowrap;
@@ -28,6 +32,7 @@ table.users {
                 }
 
                 img {
+                    font-size: 1em;
                     margin-left: .5em;
                 }
             }
@@ -45,6 +50,18 @@ table.users {
                 &:last-child {
                     font-weight: 900;
                     text-align: center;
+                }
+            }
+        }
+    }
+
+    tfoot {
+        tr {
+            td {
+                span {
+                    select {
+                        margin-inline: .5em;
+                    }
                 }
             }
         }

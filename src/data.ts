@@ -24,35 +24,35 @@ import serviceaccount from './assets/icons/serviceaccount.svg';
 export const tabLinks: linksType[] = [
     {
         title: 'customers', links: [
-            { icon: users, name: 'users', path: '/dashboard?tab=users' },
-            { icon: gurantors, name: 'gurantors', path: '/dashboard?tab=gurantors' },
-            { icon: loans, name: 'loans', path: '/dashboard?tab=loans' },
-            { icon: handshake, name: 'decision models', path: '/dashboard?tab=decision' },
-            { icon: savings, name: 'savings', path: '/dashboard?tab=savings' },
-            { icon: request, name: 'loan reuests', path: '/dashboard?tab=loan' },
-            { icon: whitelist, name: 'whitelist', path: '/dashboard?tab=whitelist' },
-            { icon: karma, name: 'karma', path: '/dashboard?tab=karma' },
+            { icon: users, name: 'users', path: '/dashboard/users' },
+            { icon: gurantors, name: 'gurantors', path: '/dashboard/gurantors' },
+            { icon: loans, name: 'loans', path: '/dashboard/loans' },
+            { icon: handshake, name: 'decision models', path: '/dashboard/decision' },
+            { icon: savings, name: 'savings', path: '/dashboard/savings' },
+            { icon: request, name: 'loan reuests', path: '/dashboard/loan' },
+            { icon: whitelist, name: 'whitelist', path: '/dashboard/whitelist' },
+            { icon: karma, name: 'karma', path: '/dashboard/karma' },
         ]
     },
     {
         title: 'businesses', links: [
-            { icon: cases, name: 'organisation', path: '/dashboard?tab=organisation' },
-            { icon: loans, name: 'loan products', path: '/dashboard?tab=loan' },
-            { icon: saveproduct, name: 'savings products', path: '/dashboard?tab=karma' },
-            { icon: fees, name: 'fees and charges', path: '/dashboard?tab=karma' },
-            { icon: transaction, name: 'transactions', path: '/dashboard?tab=karma' },
-            { icon: service, name: 'services', path: '/dashboard?tab=karma' },
-            { icon: serviceaccount, name: 'service account', path: '/dashboard?tab=karma' },
-            { icon: settlement, name: 'settlements', path: '/dashboard?tab=karma' },
-            { icon: report, name: 'reports', path: '/dashboard?tab=karma' },
+            { icon: cases, name: 'organisation', path: '/dashboard/organisation' },
+            { icon: loans, name: 'loan products', path: '/dashboard/loan' },
+            { icon: saveproduct, name: 'savings products', path: '/dashboard/karma' },
+            { icon: fees, name: 'fees and charges', path: '/dashboard/karma' },
+            { icon: transaction, name: 'transactions', path: '/dashboard/karma' },
+            { icon: service, name: 'services', path: '/dashboard/karma' },
+            { icon: serviceaccount, name: 'service account', path: '/dashboard/karma' },
+            { icon: settlement, name: 'settlements', path: '/dashboard/karma' },
+            { icon: report, name: 'reports', path: '/dashboard/karma' },
         ]
     },
     {
         title: 'settings', links: [
-            { icon: preference, name: 'preferences', path: '/dashboard?tab=preferences' },
-            { icon: pricing, name: 'fees and pricing', path: '/dashboard?tab=pricing' },
-            { icon: clipboard, name: 'audit logs', path: '/dashboard?tab=clipboard' },
-            { icon: message, name: 'systems messages', path: '/dashboard?tab=message' },
+            { icon: preference, name: 'preferences', path: '/dashboard/preferences' },
+            { icon: pricing, name: 'fees and pricing', path: '/dashboard/pricing' },
+            { icon: clipboard, name: 'audit logs', path: '/dashboard/clipboard' },
+            { icon: message, name: 'systems messages', path: '/dashboard/message' },
         ]
     },
 ];

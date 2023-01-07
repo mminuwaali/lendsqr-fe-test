@@ -1,9 +1,8 @@
 import './style.scss';
 import { ReactElement } from 'react';
+import type { reportType } from '../../../vite-env';
 
-type propType = { image: string, number: number | string, name?: string };
-
-export default ({ image = '', number = 0, name }: propType): ReactElement<HTMLDivElement> => {
+export default ({ image = '', number, name }: reportType): ReactElement<HTMLDivElement> => {
     return <div className="cards">
         <img src={image} alt="" />
         <h4>{name}</h4>

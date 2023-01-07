@@ -1,21 +1,37 @@
 import './style.scss';
-import {useParams} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import {UserContext} from '../../../contexts';
 import { Link, NavLink } from 'react-router-dom';
+import type { dataType } from '../../../vite-env';
+import { Dispatch, ReactElement, SetStateAction, useState, useContext, useEffect } from 'react';
+
+// icons
 import back from '../../../assets/icons/back.svg';
-import { Dispatch, ReactElement, SetStateAction, useState } from 'react';
+import star from '../../../assets/icons/star.svg';
+import colored from '../../../assets/icons/colored-star.svg';
 
 export default (): ReactElement => {
     // params
-    const {id} = useParams();
+    const { id } = useParams();
+
+    // context
+    const users = useContext(UserContext);
 
     // states
     const [open, setOpen]: [boolean, Dispatch<SetStateAction<boolean>>] = useState(false);
+    const [user, setUser]:[Partial<dataType>, Dispatch<SetStateAction<Partial<dataType>>>] = useState({});
+
+    // effects
+    useEffect(() => {
+        setUser(prev => users.find(usr => usr?.id == id) || prev);
+    },[id, users]);
 
     // methods
     const toggleNav = () => setOpen(prev => !prev);
+    
 
     return <div className="main-user">
-        <Link to='/dashboard' className="back-btn">
+        <Link to='/dashboard/users' className="back-btn">
             <img src={back} alt="" />
             <span>back to users</span>
         </Link>
@@ -29,19 +45,23 @@ export default (): ReactElement => {
         <div className="main-detail">
             <div className="details">
                 <div className="info">
-                    <img src={''} alt="" />
+                    <img src={user?.profile?.avatar} alt="" />
                     <div className="">
-                        <h3>grace isaac</h3>
+                        <h3>{user?.userName}</h3>
                         <span>werdghjwddv</span>
                     </div>
                 </div>
                 <div className="tier">
                     <span>user's tier</span>
-                    <div className="star"></div>
+                    <div className="star">
+                        <img src={colored} alt="" />
+                        <img src={star} alt="" />
+                        <img src={star} alt="" />
+                    </div>
                 </div>
                 <div className="account-details">
-                    <h3>N2,000,000</h3>
-                    <span>0265654531/providus bank</span>
+                    <h3>₦{user?.accountBalance}</h3>
+                    <span>{user?.accountNumber}</span>
                 </div>
             </div>
             <ul className={`tabs ${open ? 'open' : ''}`}>
@@ -49,19 +69,19 @@ export default (): ReactElement => {
                     <NavLink to={`/dashboard/users/${id}`}>general details</NavLink>
                 </li>
                 <li>
-                    <NavLink to={`/dashboard/users/${id}/documents`}>documents</NavLink>
+                    <NavLink to={`/dashboard/users/${id}/document`}>documents</NavLink>
                 </li>
                 <li>
                     <NavLink to={`/dashboard/users/${id}/bank`}>bank details</NavLink>
                 </li>
                 <li>
-                    <NavLink to={`/dashboard/users/${id}/loans`}>loans</NavLink>
+                    <NavLink to={`/dashboard/users/${id}/loan`}>loans</NavLink>
                 </li>
                 <li>
-                    <NavLink to={`/dashboard/users/${id}/savings`}>savings</NavLink>
+                    <NavLink to={`/dashboard/users/${id}/saving`}>savings</NavLink>
                 </li>
                 <li>
-                    <NavLink to={`/dashboard/users/${id}/app`}>app and system</NavLink>
+                    <NavLink to={`/dashboard/users/${id}/system`}>app and system</NavLink>
                 </li>
             </ul>
             <div className={`open-btn ${open ? 'open' : ''}`} onClick={toggleNav}>
