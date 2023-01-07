@@ -3,6 +3,7 @@ section#users-table {
     flex: 1 0 auto;
     padding: 1.5em;
     overflow-x: auto;
+    position: relative;
     border-radius: .2em;
     justify-content: center;
     background-color: var(--5);

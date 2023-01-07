@@ -2,6 +2,7 @@ table.users {
     padding: 1em;
     color: var(--1);
     font-size: .8em;
+    position: relative;
     border-radius: .4em;
     border-collapse: collapse;
 
@@ -10,7 +11,9 @@ table.users {
     }
 
     tr {
-        td,th {
+
+        td,
+        th {
             white-space: nowrap;
         }
     }
@@ -41,8 +44,10 @@ table.users {
 
     tbody {
         padding-inline: 1em;
+
         tr {
             border-bottom: .05em solid var(--4);
+
             td {
                 padding: 0.5em;
                 color: var(--1);
@@ -61,6 +66,23 @@ table.users {
                 span {
                     select {
                         margin-inline: .5em;
+                    }
+                }
+
+                button {
+                    border: none;
+                    margin: .5em;
+                    outline: none;
+                    cursor: pointer;
+                    color: var(--1);
+                    font-weight: 900;
+                    padding: .4em .6em;
+                    text-align: center;
+                    border-radius: .2em;
+                    background-color: var(--4);
+
+                    &:disabled {
+                        opacity: 0.2;
                     }
                 }
             }
