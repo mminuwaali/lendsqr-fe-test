@@ -15,10 +15,7 @@ export default ({ close, updater, initial }: propType): ReactElement<HTMLFormEle
     const [data, setData]: stateType<Partial<dataType>> = useState(initial);
 
     // effects
-    useEffect(() => {
-        console.log(initial);
-        setOrg(() => [...new Set(users.map(attr => attr.orgName))]);
-    }, [users]);
+    useEffect(() => { setOrg(() => [...new Set(users.map(attr => attr.orgName))]); }, [users]);
 
     // methods
     // @ts-ignore

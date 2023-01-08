@@ -2,11 +2,12 @@ section#users-table {
     display: flex;
     flex: 1 0 auto;
     padding: 1.5em;
-    min-height: 10em;
+    min-height: 30em;
     overflow-x: auto;
     position: relative;
     border-radius: .2em;
     justify-content: center;
+    align-items: flex-start;
     background-color: var(--5);
     box-shadow: .2em .2em .2em rgba(0 0 0 / .1);
 

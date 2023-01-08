@@ -1,7 +1,15 @@
 # Getting Started.
 
 ## About lendsqr background
-At Lendsqr, many of our lenders use web apps to reach over half a million customers. At this scale, we use React with TypeScript and SCSS as its frontend software development stack which allows us to rapidly ideate and release features rapidly and reliably.
+At Lendsqr, we’re on a mission to simplify the lending process with an easy, but sophisticated technology that can guarantee an awesome lending experience.
+
+We strongly believe that our technology will solve the credit gap in developing countries and improve the lives of millions.
+
+### Our philosophies
+
+Our philosophies guide our internal conduct as well as our relationship with our customers, partners, and shareholders. These philosophies form the foundation of our Lendsqr culture and story.
+
+Our customers’ interest is our most valued priority. We are keen and committed to ensuring that we meet their respective needs.
 
 ## Tech Stacks:
 
@@ -51,6 +59,12 @@ The project should be livw in [localhost:5173](https://localhost:5173).
 
 4. Happy coding.
 
+## About this project
+This project is an assessement from Lendsqr tech tech to develop 4 pages, it list users that are part of the lendsqr company, which is a lending as a service platform(laas).
+
+Overview of the project is to fetch user data from an api endpoint and render them in the user's page in tables, the table has some functionalities like sorting, filtering and pagination.
+A user can also click on an individual user data on the table to see the user's details.
+
 ## License
 
-distributed under the MIT [License](https://github.com/mminuwaali) for more information.
+distributed under the MIT License.
