@@ -1,6 +1,10 @@
 /// <reference types="vite/client" />
 
+import { Dispatch, SetStateAction } from 'react';
+
 export { Column } from 'react-table';
+
+export type stateType<D> = [D, Dispatch<SetStateAction<D>>];
 
 export type linksType<T = string> = {
     title: T,

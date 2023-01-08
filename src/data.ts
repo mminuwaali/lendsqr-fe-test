@@ -21,6 +21,13 @@ import transaction from './assets/icons/transaction.svg';
 import saveproduct from './assets/icons/saveproduct.svg';
 import serviceaccount from './assets/icons/serviceaccount.svg';
 
+const Cell = ({ value }: { value: any }): string => {
+    let d = new Date(value);
+    let [dd, hh, dt, dm] = [d.toDateString(), d.getUTCHours(), d.getUTCDate(), d.getHours() > 12 ? 'PM' : 'AM'];
+
+    return `${dd} ${hh}:${dt} ${dm}`;
+};
+
 export const tabLinks: linksType[] = [
     {
         title: 'customers', links: [
@@ -57,18 +64,13 @@ export const tabLinks: linksType[] = [
     },
 ];
 
-export const usersDataTable: Column[] = [
+export const usersDataTable: Column[] | any = [
+    { Header: '', accessor: 'id', disableSortBy: true },
     { Header: 'organisation', accessor: 'orgName' },
     { Header: 'username', accessor: 'userName' },
     { Header: 'email', accessor: 'email' },
     { Header: 'phone number', accessor: 'phoneNumber' },
-    {
-        Header: 'date joined', accessor: 'createdAt', Cell: ({ value }): any => {
-            let d = new Date(value);
-            let [utc, hrs, min, mm] = [d.toDateString(), d.getUTCHours(), d.getUTCDate(), d.getHours() > 12 ? 'PM' : 'AM'];
-            return `${utc} ${hrs}:${min} ${mm}`;
-        }
-    },
+    { Header: 'date joined', accessor: 'createdAt', Cell },
     { Header: 'status', accessor: 'education.employmentStatus' },
-    { Header: '', accessor: 'id' },
+    { Header: '', accessor: 'accountNumber' },
 ];
