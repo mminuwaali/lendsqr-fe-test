@@ -1,6 +1,7 @@
-# Getting Started.
+# Getting Started
 
 ## About lendsqr background
+
 At Lendsqr, we’re on a mission to simplify the lending process with an easy, but sophisticated technology that can guarantee an awesome lending experience.
 
 We strongly believe that our technology will solve the credit gap in developing countries and improve the lives of millions.
@@ -11,7 +12,7 @@ Our philosophies guide our internal conduct as well as our relationship with our
 
 Our customers’ interest is our most valued priority. We are keen and committed to ensuring that we meet their respective needs.
 
-## Tech Stacks:
+## Tech Stacks
 
 The technologies used in this project:
 
@@ -36,20 +37,20 @@ before you start using the project, you must have these softwares installed befo
 
 after done with the prerequisites, follow on to this step to make the project ready.
 
-1. Fork the repo from https://github.com/mminuwaali/lendsqr-fe-test
-
+1. Fork the repo from <https://github.com/mminuwaali/lendsqr-fe-test>
 
 ~~~ cmd
 git clone git@github.com:mminuwaali/lendsqr-fe-test.git
 cd lendsqr-fe-test
 ~~~
 
-2. Run npm i to install the dependencies
+1. Run npm i to install the dependencies
+
 ~~~ cmd
 npm i or npm install
 ~~~
 
-3. Run the project using npm
+1. Run the project using npm
 
 ~~~ cmd
 npm run dev
@@ -57,9 +58,10 @@ npm run dev
 
 The project should be livw in [localhost:5173](https://localhost:5173).
 
-4. Happy coding.
+1. Happy coding.
 
 ## About this project
+
 This project is an assessement from Lendsqr tech tech to develop 4 pages, it list users that are part of the lendsqr company, which is a lending as a service platform(laas).
 
 Overview of the project is to fetch user data from an api endpoint and render them in the user's page in tables, the table has some functionalities like sorting, filtering and pagination.

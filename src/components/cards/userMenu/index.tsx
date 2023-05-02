@@ -13,7 +13,7 @@ export default ({id}:{id:number}): ReactElement<HTMLDivElement> => {
 
     // methods
     const toggleOpen = ():void => setOpen(prev => !prev);
-    
+
 
     return <div className="menu">
         <button onClick={toggleOpen} className={open ? 'open' : ''}><i /><i /><i /></button>
@@ -31,10 +31,10 @@ export default ({id}:{id:number}): ReactElement<HTMLDivElement> => {
                 <Link to='/'>activate user</Link>
             </li>
         </ul>
-        <div className="links">
+        {/* <div className="links">
             <Link to='/'></Link>
             <Link to='/'></Link>
             <Link to='/'></Link>
-        </div>
+        </div> */}
     </div>;
 };

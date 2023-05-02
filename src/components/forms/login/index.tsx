@@ -1,20 +1,23 @@
 import './style.scss';
-import { Link } from 'react-router-dom';
-import { ReactElement, useState, Dispatch, SetStateAction, ChangeEventHandler, FormEventHandler } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { ReactElement, useState, ChangeEventHandler, FormEventHandler } from 'react';
 
 type dataType = { email: string, password: string };
 
 export default (): ReactElement<HTMLFormElement> => {
+    // router
+    const nav = useNavigate();
+
     // states
-    const [show, seteShow]: [boolean, Dispatch<SetStateAction<boolean>>] = useState(false);
-    const [data, setData]: [dataType, Dispatch<SetStateAction<dataType>>] = useState({ email: "", password: "" });
+    const [show, seteShow] = useState<boolean>(false);
+    const [data, setData] = useState<dataType>({ email: "", password: "" });
 
     // methods
     const toggleShow = () => seteShow(prev => !prev);
     const updateData: ChangeEventHandler<HTMLInputElement> = ({ currentTarget: t }) => setData(prev => ({ ...prev, [t.name]: t.value }))
-    const onSubmit: FormEventHandler<HTMLFormElement> = (evennt) => {
-        evennt.preventDefault();
-        console.log(data);
+    const onSubmit: FormEventHandler<HTMLFormElement> = (ev) => {
+        ev.preventDefault();
+        nav('/dashboard');
     };
 
     return <form action="#" id='login' method="post" onSubmit={onSubmit}>
