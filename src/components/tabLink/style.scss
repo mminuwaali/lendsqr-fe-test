@@ -11,8 +11,20 @@ aside {
     justify-content: flex-start;
     box-shadow: .2em 0 .2em rgba(0 0 0 / .1);
 
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
     @media screen and (max-width: 45em) {
         width: 3.8em;
+    }
+
+    img.caret-down {
+        width: .8em;
+
+        @media screen and (max-width: 45em) {
+            display: none;
+        }
     }
 
     a {
@@ -25,6 +37,7 @@ aside {
         align-items: center;
         text-decoration: none;
         justify-content: flex-start;
+
 
         &::before,
         &::after {

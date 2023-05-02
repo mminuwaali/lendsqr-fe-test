@@ -7,12 +7,14 @@ import { NavLink, Link } from 'react-router-dom';
 import $case from '../../assets/icons/case.svg';
 import $home from '../../assets/icons/home.svg';
 import logout from '../../assets/icons/logout.svg';
+import $down from '../../assets/icons/caret-down.svg';
 
 export default (): ReactElement => {
     return <aside>
         <NavLink to='/'>
             <img src={$case} alt="" />
             <span>switch organisation</span>
+            <img src={$down} alt="" className='caret-down' />
         </NavLink>
         <NavLink to='/dashboard'>
             <img src={$home} alt="" />

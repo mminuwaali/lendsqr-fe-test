@@ -7,6 +7,7 @@ import { Dispatch, ReactElement, SetStateAction, useState } from 'react';
 import logo from '../../assets/icons/logo.svg';
 import bell from '../../assets/icons/bell.svg';
 import avatar from '../../assets/imgs/avatar.svg';
+import down from '../../assets/icons/caret-down.svg';
 import searchIcon from '../../assets/icons/search.svg';
 
 export default (): ReactElement => {
@@ -28,6 +29,7 @@ export default (): ReactElement => {
                 <img src={bell} alt="" className="bell" />
                 <img src={avatar} alt="" className='user-img' />
                 <span>mminuwaali</span>
+                <img src={down} alt="" className='caret-down' />
             </div>
         </div>
     </nav>;
